@@ -1,0 +1,459 @@
+/* ==================== RESET E VARIÁVEIS ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: #d84a38;
+    --cor-secundaria: #f39c12;
+    --cor-terceira: #c67c3b;
+    --cor-fundo: #faf6f1;
+    --cor-texto: #333;
+    --cor-claro: #fff;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --sombra-forte: 0 8px 25px rgba(0, 0, 0, 0.2);
+    --transicao: all 0.3s ease;
+}
+
+/* ==================== BODY E ESTRUTURA ==================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ==================== HEADER ==================== */
+
+header {
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: var(--sombra-forte);
+    margin-bottom: 50px;
+    border-radius: 0 0 15px 15px;
+}
+
+header h1 {
+    color: var(--cor-claro);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+#busca {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+}
+
+#busca:focus {
+    outline: none;
+    box-shadow: var(--sombra-forte);
+    transform: translateY(-2px);
+}
+
+/* ==================== NAVEGAÇÃO ==================== */
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: var(--cor-claro);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: var(--transicao);
+    border: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid var(--cor-claro);
+    transform: translateY(-2px);
+}
+
+/* ==================== SEÇÕES ==================== */
+
+section {
+    margin-bottom: 60px;
+}
+
+section h1 {
+    font-size: 2em;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-secundaria);
+    padding-left: 15px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-secundaria);
+    padding-left: 15px;
+}
+
+section p {
+    font-size: 1.05em;
+    color: var(--cor-texto);
+    line-height: 1.8;
+}
+
+/* ==================== HOME ==================== */
+
+#home {
+    background: linear-gradient(135deg, rgba(216, 74, 56, 0.1) 0%, rgba(243, 156, 18, 0.1) 100%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+}
+
+#home h1 {
+    font-size: 2.5em;
+}
+
+#home h2 {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+}
+
+/* ==================== SOBRE ==================== */
+
+#sobre {
+    padding: 40px;
+    background: var(--cor-claro);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+}
+
+.sobre-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.info-box {
+    background: linear-gradient(135deg, rgba(216, 74, 56, 0.05) 0%, rgba(243, 156, 18, 0.05) 100%);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid var(--cor-secundaria);
+    transition: var(--transicao);
+    box-shadow: var(--sombra);
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-forte);
+    background: linear-gradient(135deg, rgba(216, 74, 56, 0.1) 0%, rgba(243, 156, 18, 0.1) 100%);
+}
+
+.info-box h3 {
+    color: var(--cor-primaria);
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.info-box p {
+    color: var(--cor-texto);
+    line-height: 1.7;
+}
+
+/* ==================== RECEITAS ==================== */
+
+#menu {
+    padding: 40px;
+    background: var(--cor-claro);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+}
+
+.receitas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.receita-card {
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-terceira) 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+    cursor: pointer;
+}
+
+.receita-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-forte);
+}
+
+.receita-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transicao);
+}
+
+.receita-card:hover img {
+    transform: scale(1.05);
+}
+
+.receita-card .info {
+    padding: 25px;
+    color: var(--cor-claro);
+}
+
+.receita-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.receita-card p {
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* ==================== CONTATO ==================== */
+
+#contato {
+    padding: 40px;
+    background: var(--cor-claro);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+}
+
+.contato-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.contato-box {
+    background: linear-gradient(135deg, rgba(216, 74, 56, 0.05) 0%, rgba(243, 156, 18, 0.05) 100%);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid var(--cor-secundaria);
+    transition: var(--transicao);
+    box-shadow: var(--sombra);
+}
+
+.contato-box:hover {
+    background: linear-gradient(135deg, rgba(216, 74, 56, 0.1) 0%, rgba(243, 156, 18, 0.1) 100%);
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-forte);
+}
+
+.contato-box h3 {
+    color: var(--cor-primaria);
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.contato-box p {
+    color: var(--cor-texto);
+    font-size: 1.05em;
+    line-height: 1.8;
+}
+
+/* ==================== DEPOIMENTOS ==================== */
+
+#depoimentos {
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(216, 74, 56, 0.05) 0%, rgba(243, 156, 18, 0.05) 100%);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+}
+
+.depoimentos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.depoimento {
+    background: var(--cor-claro);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid var(--cor-secundaria);
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+}
+
+.depoimento:hover {
+    box-shadow: var(--sombra-forte);
+    transform: translateY(-5px);
+}
+
+.depoimento p {
+    font-style: italic;
+    color: var(--cor-texto);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.depoimento h4 {
+    color: var(--cor-primaria);
+    font-weight: 600;
+    font-size: 1em;
+}
+
+/* ==================== MENSAGEM DE NÃO ENCONTRADO ==================== */
+
+#nao-encontrado {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 12px;
+    color: #856404;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin: 20px 0;
+    box-shadow: var(--sombra);
+    animation: slideIn 0.3s ease-in-out;
+}
+
+/* ==================== ANIMAÇÕES ==================== */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ==================== FOOTER ==================== */
+
+footer {
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+    color: var(--cor-claro);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    border-radius: 15px 15px 0 0;
+    box-shadow: var(--sombra-forte);
+}
+
+footer p {
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ==================== RESPONSIVO ==================== */
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    section h1 {
+        font-size: 1.5em;
+    }
+
+    section h2 {
+        font-size: 1.4em;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .receitas {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-info,
+    .contato-info,
+    .depoimentos-container {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 20px !important;
+    }
+
+    #busca {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    section h1 {
+        font-size: 1.3em;
+    }
+
+    section h2 {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px 15px;
+    }
+}
